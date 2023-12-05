@@ -1,0 +1,29 @@
+      {% extends 'tarefas/base.html' %}
+      {% block conteudo %}
+      <form action="{% url 'Edit' id=tarefa.id %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <h1>Editar Tarefa</h1>
+
+                <div class="col-md-8">
+                  <div class="mb-3">
+                      <label for="nome" class="form-label">Nome da Tarefa</label>
+                      <input name="nome" id="nome" class="form-control" type="text" value="{{ tarefa.nome }}">
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">E-mail</label>
+                      <input name="email" id="email" class="form-control" type="email" value="{{ tarefa.email }}">
+                  </div>
+                  <div class="mb-3">
+                      <label for="descricao" class="form-label">Descrição</label>
+                      <input name="descricao" id="descricao" class="form-control" type="text" value="{{ tarefa.descricao }}">
+                  </div>
+                  <div class="mb-3">
+                      <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </form>
+      {% endblock %}

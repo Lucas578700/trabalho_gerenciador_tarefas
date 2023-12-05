@@ -1,0 +1,10 @@
+{% extends 'tarefas/base.html' %}
+      {% block conteudo %}
+
+      <form method="post">
+        {% csrf_token %}
+        <h3>Você deseja excluir está tarefa?</h3>
+        <button type="submit">Confirmar</button>
+      </form>
+
+      {% endblock %}
