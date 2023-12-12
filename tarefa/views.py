@@ -59,7 +59,7 @@ def Create(request):
 
 def Email(data):
     message_body = get_template('tarefas/email.html').render(data)
-    sendmail = EmailMessage('Cadastro Feito com Sucesso', message_body, settings.DEFAULT_FROM_EMAIL, to=['lturco@hotmail.com'])
+    sendmail = EmailMessage('Cadastro Feito com Sucesso', message_body, settings.DEFAULT_FROM_EMAIL, to=['teste@teste.com'])
     sendmail.content_subtype = 'html'
     return sendmail.send()  
 
